@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 function splitTextOn(text, highlightText) {
   const position = text.toLowerCase().indexOf(highlightText.toLowerCase());
@@ -28,9 +28,9 @@ function HighlightedText({ text, highlightText }) {
   );
 }
 
-function OptionList({ curInput, options, onClick, selected }) {
+function OptionList({ curInput, options, onClick, selected, containerRef }) {
   return (
-    <ul className="autocomplete-options">
+    <ul className="autocomplete-options" ref={containerRef}>
       {options.map((text, index) => (
         <li
           key={text}
@@ -53,6 +53,7 @@ function FormContainer({ initOptions = [] }) {
   const [selectedItemIndex, setSelectedItemIndex] = useState(-1);
   const [filteredOptions, setFilteredOptions] = useState([]);
   const [showOptions, setShowOptions] = useState(false);
+  const listRef = useRef(null);
 
   function selectItem(text) {
     setInputText(text);
@@ -60,6 +61,8 @@ function FormContainer({ initOptions = [] }) {
   }
 
   function handleKeyDown(event) {
+    console.log(listRef && listRef.current);
+    console.log(listRef && listRef.current && listRef.current.scrollTop);
     if (event.keyCode === KEY_UP) {
       if (selectedItemIndex > 0) {
         setSelectedItemIndex(selectedItemIndex - 1);
@@ -85,28 +88,25 @@ function FormContainer({ initOptions = [] }) {
   }
 
   return (
-    <form onKeyDown={handleKeyDown} onSubmit={(e) => e.preventDefault()}>
-      <label htmlFor="input-choice"></label>
-      <br />
-      <div className="autocomplete">
-        <input
-          autoComplete="off"
-          id="input-choice"
-          name="input-choice"
-          onChange={(event) => handleTextChange(event.target.value)}
-          value={inputText}
-          type="text"
+    <div className="autocomplete" onKeyDown={handleKeyDown}>
+      <input
+        autoComplete="off"
+        id="input-choice"
+        name="input-choice"
+        onChange={(event) => handleTextChange(event.target.value)}
+        value={inputText}
+        type="text"
+      />
+      {showOptions && (
+        <OptionList
+          curInput={inputText}
+          options={filteredOptions}
+          onClick={selectItem}
+          selected={selectedItemIndex}
+          containerRef={listRef}
         />
-        {showOptions && (
-          <OptionList
-            curInput={inputText}
-            options={filteredOptions}
-            onClick={selectItem}
-            selected={selectedItemIndex}
-          />
-        )}
-      </div>
-    </form>
+      )}
+    </div>
   );
 }
 
