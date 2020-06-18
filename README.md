@@ -1,3 +1,17 @@
+# AutoCompleteInput
+
+## Usage
+
+`<AutoCompleteInput initOptions={ … } />`
+
+- initOptions: An array of strings
+
+## TODO
+- Ideally a user should be able to type "Acai" and the widget will helpfully return "Açaí".
+- Scroll the option box with up down arrow keys.
+
+# Original Create React App README
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
