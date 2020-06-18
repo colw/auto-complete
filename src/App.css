@@ -1,38 +1,36 @@
-.App {
-  text-align: center;
+* {
+  outline: none !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form {
+  width: 100%;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.autocomplete {
+  outline: 1px solid red;
+  max-width: 300px;
+  padding: 0.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.autocomplete input { 
+  outline: 1px solid green;
+  margin: 0;
+  width: 300px;
+  padding: 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.autocomplete ul {
+  outline: 1px solid blue;
+  list-style: none;
+  width: 300px;
+  max-height: 150px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.autocomplete li.selected,
+.autocomplete li:hover {
+  background-color: lightblue;
 }
