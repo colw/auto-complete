@@ -3,8 +3,9 @@
 }
 
 form {
-  width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .autocomplete {
@@ -22,6 +23,7 @@ form {
 
 .autocomplete ul {
   outline: 1px solid blue;
+  border: 1px solid grey;
   list-style: none;
   width: 300px;
   max-height: 150px;
@@ -33,4 +35,7 @@ form {
 .autocomplete li.selected,
 .autocomplete li:hover {
   background-color: lightblue;
+}
+.highlighted-text {
+  font-weight: 800;
 }

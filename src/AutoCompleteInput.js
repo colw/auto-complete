@@ -18,11 +18,7 @@ function HighlightedText({ text, highlightText }) {
   return (
     <span>
       {start}
-      {highlighted && (
-        <b>
-          <i>{highlighted}</i>
-        </b>
-      )}
+      {highlighted && <span className="highlighted-text">{highlighted}</span>}
       {end}
     </span>
   );
