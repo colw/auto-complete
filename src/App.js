@@ -10,12 +10,13 @@ function App() {
   const [inputText, setInputText] = useState("");
   return (
     <div className="App">
+      <h1>AutoCompleteInput</h1>
       <form onSubmit={(e) => e.preventDefault()}>
-        <label htmlFor="input-choice">Fruit Selection</label>
         <AutoCompleteInput
           value={inputText}
           initOptions={fruitOptions}
           onChange={(event) => setInputText(event.target.value)}
+          placeholder="Select a fruit…"
         />
       </form>
     </div>

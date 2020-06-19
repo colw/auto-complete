@@ -61,7 +61,12 @@ const KEY_CODE = {
 /*
   An input component with an autocompletion suggestion box.
 */
-function AutoCompleteInput({ value = "", initOptions = [], onChange }) {
+function AutoCompleteInput({
+  value = "",
+  initOptions = [],
+  onChange,
+  placeholder,
+}) {
   const [selectedItemIndex, setSelectedItemIndex] = useState(-1);
   const [filteredOptions, setFilteredOptions] = useState([]);
   const [showOptions, setShowOptions] = useState(false);
@@ -115,7 +120,7 @@ function AutoCompleteInput({ value = "", initOptions = [], onChange }) {
         onChange={handleTextChange}
         value={value}
         type="text"
-        placeholder="Select a fruit…"
+        placeholder={placeholder}
       />
       {showOptions && filteredOptions.length > 0 && (
         <OptionList
