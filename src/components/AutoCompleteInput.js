@@ -52,6 +52,7 @@ function OptionList({ curInput, options, onClick, selected, listRef }) {
     </ul>
   );
 }
+
 const KEY_CODE = {
   ENTER: 13,
   UP: 38,
