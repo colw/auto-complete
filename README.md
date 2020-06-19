@@ -14,7 +14,8 @@ Clone the repository then run `yarn && yarn start` to see the example page.
 - Suggestion box highlights current input.
 - Arrow keys will move the selection up and down.
 - Enter will fill the input with the currently selected item, and submit.
-- You can also submit using the "submit" button.
+  - You can also submit using the "submit" button. This will submit what is
+    currently in the input box. Allowing a user to type whatever they want.
 - Escape will hide the suggestion box.
 
 ## Todo
