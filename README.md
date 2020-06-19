@@ -19,7 +19,6 @@ Clone the repository then run `yarn && yarn start` to see the example page.
 
 ## Todo
 - Scroll the option box when using arrow keys and selection goes out of bounds.
-- Ideally a user should be able to type "Acai" and the widget will helpfully return "Açaí".  
 
 ---
 
