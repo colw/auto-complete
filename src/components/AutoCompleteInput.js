@@ -82,8 +82,10 @@ function AutoCompleteInput({ value = "", initOptions = [], onChange }) {
         setSelectedItemIndex(selectedItemIndex + 1);
       }
     } else if (event.keyCode === KEY_CODE.ENTER) {
-      const selectedItemText = filteredOptions[selectedItemIndex];
-      selectItem(selectedItemText);
+      if (selectedItemIndex >= 0) {
+        const selectedItemText = filteredOptions[selectedItemIndex];
+        selectItem(selectedItemText);
+      }
     } else if (event.keyCode === KEY_CODE.ESC) {
       setShowOptions(false);
     }
@@ -96,7 +98,11 @@ function AutoCompleteInput({ value = "", initOptions = [], onChange }) {
       (option) => option.toLowerCase().indexOf(value.toLowerCase()) !== -1
     );
     setFilteredOptions(newFilteredOptions);
-    setSelectedItemIndex(0);
+    if (newFilteredOptions.length === 0) {
+      setSelectedItemIndex(-1);
+    } else {
+      setSelectedItemIndex(0);
+    }
     onChange(event);
   }
 
