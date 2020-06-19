@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import "./AutoCompleteInput.css";
 
 /*
   Given two strings, text and highlightText, return a tuple
@@ -25,7 +26,7 @@ function splitTextOn(text, highlightText) {
 function HighlightedText({ text, highlightText }) {
   const [start, highlighted, end] = splitTextOn(text, highlightText);
   return (
-    <span>
+    <span className="text-item">
       {start}
       {highlighted && <span className="highlighted-text">{highlighted}</span>}
       {end}
