@@ -4,7 +4,7 @@ import "sanitize.css";
 import "./App.css";
 import fruits from "./fruits.json";
 
-const fruitOptions = [...new Set(fruits)];
+const fruitOptions = [...new Set(fruits)]; // Remove duplicates
 
 function App() {
   const [inputText, setInputText] = useState("");
