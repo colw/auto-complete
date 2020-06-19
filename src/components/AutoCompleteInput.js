@@ -49,7 +49,7 @@ const KEY_CODE = {
 */
 function AutoCompleteInput({
   value = "",
-  initOptions = [],
+  options = [],
   onChange,
   placeholder,
 }) {
@@ -98,7 +98,7 @@ function AutoCompleteInput({
   // Then the parent onChange event is called to update the text.
   function handleTextChange(event) {
     const value = event.target.value;
-    const newFilteredOptions = initOptions.filter((option) => {
+    const newFilteredOptions = options.filter((option) => {
       const matches = indexOfIgnoreAccent(option, value);
       return matches !== -1;
     });

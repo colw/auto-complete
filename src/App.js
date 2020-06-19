@@ -26,7 +26,7 @@ function App() {
       <form onSubmit={handleSubmit}>
         <AutoCompleteInput
           value={inputText}
-          initOptions={fruitOptions}
+          options={fruitOptions}
           onChange={handleChange}
           placeholder="Select a fruit…"
         />
