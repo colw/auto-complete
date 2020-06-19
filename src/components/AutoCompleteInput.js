@@ -85,6 +85,7 @@ function AutoCompleteInput({
           const selectedItemText = filteredOptions[selectedItemIndex];
           selectItem(selectedItemText);
         }
+        setShowOptions(false);
         break;
       }
       case KEY_CODE.ESC: {
