@@ -34,7 +34,7 @@ function App() {
       </form>
       {fruit && (
         <p>
-          You have selected: <b>{fruit}</b>!
+          You have entered: <b>{fruit}</b>!
         </p>
       )}
     </div>
