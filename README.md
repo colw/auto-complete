@@ -1,7 +1,5 @@
 # AutoCompleteInput
 
-##
-
 Clone the repository and run `yarn && yarn start` to see the example.
 
 ## Component Usage
@@ -15,7 +13,8 @@ Clone the repository and run `yarn && yarn start` to see the example.
 ## Notes
 - Suggestion box highlights current input.
 - Arrow keys will move the selection up and down.
-- Enter will fill the input with the currently selected item.
+- Enter will fill the input with the currently selected item, and submit.
+- You can also submit using the "submit" button.
 - Escape will hide the suggestion box.
 
 ## Todo
