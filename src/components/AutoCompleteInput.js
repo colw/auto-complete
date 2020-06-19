@@ -110,7 +110,7 @@ function AutoCompleteInput({ value = "", initOptions = [], onChange }) {
         value={value}
         type="text"
       />
-      {showOptions && (
+      {showOptions && filteredOptions.length > 0 && (
         <OptionList
           curInput={value}
           options={filteredOptions}
