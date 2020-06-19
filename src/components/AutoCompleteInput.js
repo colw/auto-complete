@@ -73,11 +73,13 @@ function AutoCompleteInput({
   const [showOptions, setShowOptions] = useState(false);
   const listRef = useRef(null); // TODO: Use this ref to set scroll position
 
+  // Let parent know a change happened, and hide the options.
   function selectItem(text) {
     onChange({ target: { value: text } });
     setShowOptions(false);
   }
 
+  // Handle Up, Down, Enter and Escape keys.
   function handleKeyDown(event) {
     if (event.keyCode === KEY_CODE.UP) {
       if (selectedItemIndex > 0) {
@@ -97,6 +99,8 @@ function AutoCompleteInput({
     }
   }
 
+  // When text changes we need to filter the option list and display options if any
+  // Then the parent onChange event is called to update the text.
   function handleTextChange(event) {
     const value = event.target.value;
     setShowOptions(true);
@@ -105,7 +109,7 @@ function AutoCompleteInput({
     );
     setFilteredOptions(newFilteredOptions);
     if (newFilteredOptions.length === 0) {
-      setSelectedItemIndex(-1);
+      setSelectedItemIndex(-1); // Reset to -1 when there is nothing to select.
     } else {
       setSelectedItemIndex(0);
     }
@@ -115,6 +119,7 @@ function AutoCompleteInput({
   return (
     <div className="autocomplete" onKeyDown={handleKeyDown}>
       <input
+        autoFocus
         autoComplete="off"
         id="input-choice"
         name="input-choice"
