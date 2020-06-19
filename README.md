@@ -13,10 +13,12 @@
 - Enter will fill the input with the currently selected item.
 - Escape will hide the suggestion box.
 
-
 ## Todo
-- Ideally a user should be able to type "Acai" and the widget will helpfully return "Açaí".
 - Scroll the option box with up down arrow keys.
+- Ideally a user should be able to type "Acai" and the widget will helpfully return "Açaí".
+
+  _Note: The `String.normalize()` method may help here._
+  
 
 ---
 
