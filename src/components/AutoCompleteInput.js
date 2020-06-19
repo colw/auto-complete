@@ -66,21 +66,31 @@ function AutoCompleteInput({
 
   // Handle Up, Down, Enter and Escape keys.
   function handleKeyDown(event) {
-    if (event.keyCode === KEY_CODE.UP) {
-      if (selectedItemIndex > 0) {
-        setSelectedItemIndex(selectedItemIndex - 1);
+    // eslint-disable-next-line default-case
+    switch (event.keyCode) {
+      case KEY_CODE.UP: {
+        if (selectedItemIndex > 0) {
+          setSelectedItemIndex(selectedItemIndex - 1);
+        }
+        break;
       }
-    } else if (event.keyCode === KEY_CODE.DOWN) {
-      if (selectedItemIndex < filteredOptions.length - 1) {
-        setSelectedItemIndex(selectedItemIndex + 1);
+      case KEY_CODE.DOWN: {
+        if (selectedItemIndex < filteredOptions.length - 1) {
+          setSelectedItemIndex(selectedItemIndex + 1);
+        }
+        break;
       }
-    } else if (event.keyCode === KEY_CODE.ENTER) {
-      if (selectedItemIndex >= 0 && filteredOptions.length > 0) {
-        const selectedItemText = filteredOptions[selectedItemIndex];
-        selectItem(selectedItemText);
+      case KEY_CODE.ENTER: {
+        if (selectedItemIndex >= 0 && filteredOptions.length > 0) {
+          const selectedItemText = filteredOptions[selectedItemIndex];
+          selectItem(selectedItemText);
+        }
+        break;
       }
-    } else if (event.keyCode === KEY_CODE.ESC) {
-      setShowOptions(false);
+      case KEY_CODE.ESC: {
+        setShowOptions(false);
+        break;
+      }
     }
   }
 
