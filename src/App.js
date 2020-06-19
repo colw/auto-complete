@@ -11,8 +11,7 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={(e) => e.preventDefault()}>
-        <label htmlFor="input-choice"></label>
-        <br />
+        <label htmlFor="input-choice">Fruit Selection</label>
         <AutoCompleteInput
           value={inputText}
           initOptions={fruitOptions}
