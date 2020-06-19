@@ -2,13 +2,23 @@
 
 ## Usage
 
-`<AutoCompleteInput initOptions={ … } />`
+`<AutoCompleteInput value={ … } initOptions={ … } onChange={ … } />`
 
-- initOptions: An array of strings
+- value: String representing currently selected text.
+- initOptions: An array of strings.
+- onChange: Function that receives event.
 
-## TODO
+## Notes
+- Arrow keys will move the selection up and down.
+- Enter will fill the input with the currently selected item.
+- Escape will hide the suggestion box.
+
+
+## Todo
 - Ideally a user should be able to type "Acai" and the widget will helpfully return "Açaí".
 - Scroll the option box with up down arrow keys.
+
+---
 
 # Original Create React App README
 
