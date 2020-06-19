@@ -1,23 +1,7 @@
 import React, { useState, useRef } from "react";
-import "./AutoCompleteInput.css";
+import { splitTextOn, indexOfIgnoreAccent } from "../utils/StringTools";
 
-/*
-  Given two strings (text and highlightText), return a tuple
-  such that the the combination of all 3 would equal text, 
-  with the middle value being highlightText.
-*/
-function splitTextOn(text, highlightText) {
-  const position = text.toLowerCase().indexOf(highlightText.toLowerCase());
-  if (position === -1) {
-    return [text];
-  } else {
-    return [
-      text.slice(0, position),
-      highlightText,
-      text.slice(position + highlightText.length),
-    ];
-  }
-}
+import "./AutoCompleteInput.css";
 
 /* 
   Return a span text element such that an inner portion of
@@ -104,9 +88,10 @@ function AutoCompleteInput({
   // Then the parent onChange event is called to update the text.
   function handleTextChange(event) {
     const value = event.target.value;
-    const newFilteredOptions = initOptions.filter(
-      (option) => option.toLowerCase().indexOf(value.toLowerCase()) !== -1
-    );
+    const newFilteredOptions = initOptions.filter((option) => {
+      const matches = indexOfIgnoreAccent(option, value);
+      return matches !== -1;
+    });
     setFilteredOptions(newFilteredOptions);
     if (newFilteredOptions.length === 0) {
       setSelectedItemIndex(-1); // Reset to -1 when there is nothing to select.
