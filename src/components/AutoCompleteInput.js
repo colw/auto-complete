@@ -90,7 +90,7 @@ function AutoCompleteInput({
         setSelectedItemIndex(selectedItemIndex + 1);
       }
     } else if (event.keyCode === KEY_CODE.ENTER) {
-      if (selectedItemIndex >= 0) {
+      if (selectedItemIndex >= 0 && filteredOptions.length > 0) {
         const selectedItemText = filteredOptions[selectedItemIndex];
         selectItem(selectedItemText);
       }
@@ -103,7 +103,6 @@ function AutoCompleteInput({
   // Then the parent onChange event is called to update the text.
   function handleTextChange(event) {
     const value = event.target.value;
-    setShowOptions(true);
     const newFilteredOptions = initOptions.filter(
       (option) => option.toLowerCase().indexOf(value.toLowerCase()) !== -1
     );
@@ -113,6 +112,7 @@ function AutoCompleteInput({
     } else {
       setSelectedItemIndex(0);
     }
+    setShowOptions(true);
     onChange(event);
   }
 
