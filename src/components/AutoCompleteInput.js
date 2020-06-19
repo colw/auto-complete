@@ -103,11 +103,7 @@ function AutoCompleteInput({
       return matches !== -1;
     });
     setFilteredOptions(newFilteredOptions);
-    if (newFilteredOptions.length === 0) {
-      setSelectedItemIndex(-1); // Reset to -1 when there is nothing to select.
-    } else {
-      setSelectedItemIndex(0);
-    }
+    setSelectedItemIndex(-1);
     setShowOptions(true);
     onChange(event);
   }
