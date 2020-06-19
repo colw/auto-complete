@@ -7,7 +7,7 @@ import "./AutoCompleteInput.css";
   Return a span text element such that an inner portion of
   the text is wrapped in a span tag.
 */
-function HighlightedText({ text, highlightText }) {
+function TextWIthHighlight({ text, highlightText }) {
   const [start, highlighted, end] = splitTextOn(text, highlightText);
   return (
     <span className="text-item">
@@ -30,7 +30,7 @@ function OptionList({ curInput, options, onClick, selected, listRef }) {
           onClick={() => onClick(text)}
           className={index === selected ? "selected" : ""}
         >
-          <HighlightedText text={text} highlightText={curInput} />
+          <TextWIthHighlight text={text} highlightText={curInput} />
         </li>
       ))}
     </ul>
