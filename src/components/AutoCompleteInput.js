@@ -115,6 +115,7 @@ function AutoCompleteInput({ value = "", initOptions = [], onChange }) {
         onChange={handleTextChange}
         value={value}
         type="text"
+        placeholder="Select a fruit…"
       />
       {showOptions && filteredOptions.length > 0 && (
         <OptionList
