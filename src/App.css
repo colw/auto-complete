@@ -1,33 +1,4 @@
-form {
-  padding: 1rem;
-  margin: 1rem;
-}
-
-.autocomplete {
-  max-width: 300px;
-  margin: 0;
-}
-
-.autocomplete input { 
-  margin: 0;
-  width: 300px;
-  padding: 0.5rem;
-}
-
-.autocomplete ul {
-  border: 1px solid grey;
-  list-style: none;
-  width: 300px;
-  max-height: 150px;
-  overflow-y: auto;
-  margin: 0;
-  padding: 0.5rem;
-}
-
-.autocomplete li.selected,
-.autocomplete li:hover {
-  background-color: lightblue;
-}
-.highlighted-text {
-  font-weight: 800;
+h1, form {
+  padding: 0.5rem 0;
+  margin: 0 2rem;
 }

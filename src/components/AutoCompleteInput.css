@@ -1,0 +1,34 @@
+.autocomplete {
+  max-width: 300px;
+  margin: 0;
+}
+
+.autocomplete input { 
+  margin: 0;
+  width: 300px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.autocomplete ul {
+  border: 1px solid grey;
+  list-style: none;
+  width: 300px;
+  max-height: 150px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.autocomplete li.selected,
+.autocomplete li:hover {
+  background-color: lightblue;
+}
+
+.autocomplete .highlighted-text {
+  font-weight: 800;
+}
+
+.autocomplete .text-item {
+  padding-left: 0.5rem;
+}
