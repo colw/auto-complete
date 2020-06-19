@@ -28,7 +28,7 @@ function App() {
           value={inputText}
           options={fruitOptions}
           onChange={handleChange}
-          placeholder="Select a fruit…"
+          placeholder="Enter a fruit…"
         />
         <button type="submit">Submit</button>
       </form>
