@@ -2,9 +2,9 @@ import React, { useState, useRef } from "react";
 import "./AutoCompleteInput.css";
 
 /*
-  Given two strings, text and highlightText, return a tuple
+  Given two strings (text and highlightText), return a tuple
   such that the the combination of all 3 would equal text, 
-  with the middle value being the highlightText,
+  with the middle value being highlightText.
 */
 function splitTextOn(text, highlightText) {
   const position = text.toLowerCase().indexOf(highlightText.toLowerCase());
