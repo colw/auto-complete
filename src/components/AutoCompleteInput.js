@@ -37,13 +37,6 @@ function OptionList({ curInput, options, onClick, selected, listRef }) {
   );
 }
 
-const KEY_CODE = {
-  ENTER: 13,
-  UP: 38,
-  DOWN: 40,
-  ESC: 27,
-};
-
 /*
   An input component with an autocompletion suggestion box.
 */
@@ -67,20 +60,20 @@ function AutoCompleteInput({
   // Handle Up, Down, Enter and Escape keys.
   function handleKeyDown(event) {
     // eslint-disable-next-line default-case
-    switch (event.keyCode) {
-      case KEY_CODE.UP: {
+    switch (event.key) {
+      case "ArrowUp": {
         if (selectedItemIndex > 0) {
           setSelectedItemIndex(selectedItemIndex - 1);
         }
         break;
       }
-      case KEY_CODE.DOWN: {
+      case "ArrowDown": {
         if (selectedItemIndex < filteredOptions.length - 1) {
           setSelectedItemIndex(selectedItemIndex + 1);
         }
         break;
       }
-      case KEY_CODE.ENTER: {
+      case "Enter": {
         if (selectedItemIndex >= 0 && filteredOptions.length > 0) {
           const selectedItemText = filteredOptions[selectedItemIndex];
           selectItem(selectedItemText);
@@ -88,7 +81,7 @@ function AutoCompleteInput({
         setShowOptions(false);
         break;
       }
-      case KEY_CODE.ESC: {
+      case "Escape": {
         setShowOptions(false);
         break;
       }
